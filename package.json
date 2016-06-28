@@ -1,0 +1,21 @@
+{
+  "name": "meteor-stack",
+  "version": "0.0.1",
+  "description": "Opinionated Meteor stack from superlumen.io",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "bin/run-app.sh",
+    "admin": "bin/run-admin.sh",
+    "postinstall": "cd app/ && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superlumen/meteor-stack.git"
+  },
+  "author": "superlumen.io",
+  "license": "AGPL",
+  "bugs": {
+    "url": "https://github.com/superlumen/meteor-stack/issues"
+  },
+  "homepage": "https://github.com/superlumen/meteor-stack#readme"
+}
