@@ -3,9 +3,11 @@ import React from 'react'
 // Import react mounter instead of react-layout (npm)
 import { mount } from 'react-mounter'
 
+import IndexContainer from '/imports/ui/layouts/IndexContainer.jsx'
+import SignIn from '/imports/ui/components/auth/SignIn.jsx'
+
 // Import components used by the router
 import AppContainer from '/imports/ui/layouts/AppContainer'
-import AppPage from '/imports/ui/pages/AppPage'
 
 // Group public routes
 const router = FlowRouter.group({})
@@ -16,6 +18,13 @@ router.route('/', {
   action() {
     // Render Layout component and inject AppContainer component
     // as props.children
-    mount(AppContainer, {children: <AppPage/>})
+    mount(AppContainer, {children: <IndexContainer/>})
+  }
+})
+
+router.route('/signin', {
+  name: 'signin',
+  action() {
+    mount(AppContainer, {children: <SignIn/>})
   }
 })
