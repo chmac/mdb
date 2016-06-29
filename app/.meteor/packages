@@ -18,15 +18,13 @@ standard-minifier-js    # JS minifier run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-superlumen:base         # Superlumen base package
-superlumen:logging      # Winston, papertrail, and log methods
-
 accounts-password       # Account package
 std:accounts-ui         # Accounts UI for React
 std:accounts-semantic   # SemanticUI version of accounts
 alanning:roles          # Roles
 
 react-meteor-data       # Meteor mixin for reactive data in React
+mdg:validated-method    # Validated methods
 
 reywood:publish-composite   # Publication for multiple collections
 dburles:collection-helpers  # Collection helper methods
