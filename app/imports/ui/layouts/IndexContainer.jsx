@@ -1,9 +1,9 @@
 import React from "react"
 import { createContainer } from "meteor/react-meteor-data"
-import AppPage from '/imports/ui/pages/AppPage.jsx'
+import IndexPage from '/imports/ui/pages/IndexPage.jsx'
 
 export default AppContainer = createContainer(() => {
   return {
     user: Meteor.user()
   }
-}, AppPage)
+}, IndexPage)

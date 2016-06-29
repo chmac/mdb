@@ -1,14 +1,19 @@
 import React from "react"
-import MyComponent from "../components/MyComponent"
-import { Accounts, STATES } from "meteor/std:accounts-semantic"
+import { Provider } from "react-redux"
+import Header from "/imports/ui/layouts/Header"
+import store from "/imports/state/store"
 
 export default class AppPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>App Page</h1>
-        <MyComponent/>
-      </div>
+      <Provider store={store}>
+        <div>
+          <Header user={this.props.user}/>
+          <div className="ui container">
+            {this.props.children}
+          </div>
+        </div>
+      </Provider>
     )
   }
 }
