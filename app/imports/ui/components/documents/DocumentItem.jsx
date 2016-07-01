@@ -1,15 +1,29 @@
 import React from 'react'
+import { connect } from "react-redux"
 import { removeDocument } from '/imports/api/documents/documents.methods.js'
+import {
+  reducer as notifReducer, actions as notifActions, Notifs
+} from 'redux-notifications'
 
-export class DocumentItem extends React.Component {
+const { notifSend, notifClear } = notifActions
+
+class DocumentItem extends React.Component {
   removeDocument() {
     removeDocument.call({
       _id: this.props.document._id
     }, (err, res) => {
       if (err) {
-        console.log(err)
+        this.props.notifSend({
+          message: err.reason,
+          kind: 'warning',
+          dismissAfter: 3000
+        })
       } else {
-        //  TODO: Success
+        this.props.notifSend({
+          message: 'Deleted',
+          kind: 'success',
+          dismissAfter: 3000
+        })
       }
     })
   }
@@ -29,3 +43,5 @@ export class DocumentItem extends React.Component {
     )
   }
 }
+
+export default connect(null, { notifSend, notifClear })(DocumentItem)

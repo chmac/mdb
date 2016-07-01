@@ -1,5 +1,5 @@
 import React from 'react'
-import { DocumentItem } from '/imports/ui/components/documents/DocumentItem.jsx'
+import  DocumentItem  from '/imports/ui/components/documents/DocumentItem.jsx'
 
 export class DocumentList extends React.Component {
   renderDocuments(documents) {
