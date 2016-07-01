@@ -48,7 +48,7 @@ export const removeDocument = new ValidatedMethod({
   },
   run({ _id }) {
     const document = Documents.findOne(_id)
-    if (document.userId !== Meteor.userId()) {
+    if (document.userId !== this.userId) {
       throw new Meteor.Error('document.remove.unauthorized', "Not allowed")
     }
     return Documents.remove(_id)
