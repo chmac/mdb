@@ -1,9 +1,7 @@
 import React from 'react'
 import { connect } from "react-redux"
 import { removeDocument } from '/imports/api/documents/documents.methods.js'
-import {
-  reducer as notifReducer, actions as notifActions, Notifs
-} from 'redux-notifications'
+import { actions as notifActions } from 'redux-notifications'
 
 const { notifSend, notifClear } = notifActions
 

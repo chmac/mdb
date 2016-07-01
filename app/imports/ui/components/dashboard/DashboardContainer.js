@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { createContainer } from "meteor/react-meteor-data"
 import { Documents } from '/imports/api/documents/documents.collection.js'
 import { DocumentList } from '/imports/ui/components/documents/DocumentList.jsx'
-import { DocumentForm } from '/imports/ui/components/documents/DocumentForm.jsx'
+import  DocumentForm  from '/imports/ui/components/documents/DocumentForm.jsx'
 
 class DashboardPage extends React.Component {
   render() {
