@@ -22,21 +22,35 @@ export const insert = new ValidatedMethod({
         'Must be logged in. #rrzjwZ')
     }
     // Add the user ID
-    return Lists.insert(Object.assign(doc, {userId: this.userId}))
+    return Lists.insert(Object.assign(doc, { userId: this.userId }))
   },
 })
 
 export const setTags = new ValidatedMethod({
   name: 'documents.setTags',
-  validate({_id, tags}) {
+  validate({ _id, tags }) {
     check(_id, String)
     check(tags, [String])
   },
-  run({_id, tags}) {
+  run({ _id, tags }) {
     return Lists.update(_id, {
       $set: {
         'tax.tags': tags,
       }
     })
   },
+})
+
+export const removeDocument = new ValidatedMethod({
+  name: 'documents.delete',
+  validate({ _id }) {
+    check(_id, String)
+  },
+  run({ _id }) {
+    const document = Documents.findOne(_id)
+    if (document.userId !== Meteor.userId()) {
+      throw new Meteor.Error('document.remove.unauthorized', "Not allowed")
+    }
+    return Documents.remove(_id)
+  }
 })
