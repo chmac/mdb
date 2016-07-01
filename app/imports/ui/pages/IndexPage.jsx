@@ -2,12 +2,13 @@ import React from "react"
 import { connect } from "react-redux"
 import { incrementCount } from "/imports/state/actions"
 import { PublicIndex } from '/imports/ui/components/public/PublicIndex'
+import { DashboardContainer } from '/imports/ui/components/dashboard/DashboardContainer.js'
 
 class Index extends React.Component {
   renderApp() {
     return (
       <div>
-        You are signed in
+        <DashboardContainer/>
       </div>
     )
   }
