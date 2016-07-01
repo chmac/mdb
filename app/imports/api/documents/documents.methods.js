@@ -4,7 +4,7 @@ import { check, Match } from 'meteor/check'
 
 import { Documents } from './documents.collection'
 
-export const insert = new ValidatedMethod({
+export const insertDocument = new ValidatedMethod({
   // Documents get inserted with just a "title"
   name: 'documents.insert',
   validate(doc) {
@@ -22,7 +22,7 @@ export const insert = new ValidatedMethod({
         'Must be logged in. #rrzjwZ')
     }
     // Add the user ID
-    return Lists.insert(Object.assign(doc, { userId: this.userId }))
+    return Documents.insert(Object.assign(doc, { userId: this.userId }))
   },
 })
 
