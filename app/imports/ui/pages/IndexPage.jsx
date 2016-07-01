@@ -1,6 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { incrementCount } from "/imports/state/actions"
+import { PublicIndex } from '/imports/ui/components/public/PublicIndex'
 
 class Index extends React.Component {
   renderApp() {
@@ -14,7 +15,7 @@ class Index extends React.Component {
   renderPublic() {
     return (
       <div>
-        Please sign in
+        <PublicIndex/>
       </div>
     )
   }
